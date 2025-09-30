@@ -40,7 +40,7 @@ def plot_vle(T=78):
     plt.plot(x1, y1, label=f"T = {T} °C (Raoult's Law)")
     plt.plot([0,1],[0,1], 'k--', label="y = x (ideal line)")
     plt.plot(x1, y2, label=f"T = {T} °C (Raoult's Law Water)")
-    plt.plot(x1, P_total, label=f"T = {T} °C (Raoult's Law Water)")
+    plt.plot(x1, P_total, label=f"T = {T} °C (Total Pressure)")
 
     plt.xlabel("Liquid Mole Fraction Ethanol (x1)")
     plt.ylabel("Vapor Mole Fraction Ethanol (y1)")
