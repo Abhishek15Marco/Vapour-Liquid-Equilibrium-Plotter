@@ -27,16 +27,18 @@ def vle_curve(T=78):
 
     x1 = np.linspace(0, 1, 100)   # mole fraction ethanol in liquid
     y1 = (x1 * P_ethanol) / (x1 * P_ethanol + (1 - x1) * P_water)
-
-    return x1, y1
+    x2 = 1 - x1
+    y2 = 1 - y1
+    return x1, y1, x2, y2
 
 def plot_vle(T=78):
     # Plotting x-y VLE curve
-    x1, y1 = vle_curve(T)
+    x1, y1, x2, y2 = vle_curve(T)
 
-    plt.figure(figsize=(6,6))
+    plt.figure(figsize=(8,6))
     plt.plot(x1, y1, label=f"T = {T} °C (Raoult's Law)")
     plt.plot([0,1],[0,1], 'k--', label="y = x (ideal line)")
+    plt.plot(x2, y2, label=f"T = {T} °C (Raoult's Law Water)")
 
     plt.xlabel("Liquid Mole Fraction Ethanol (x1)")
     plt.ylabel("Vapor Mole Fraction Ethanol (y1)")
